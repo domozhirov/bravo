@@ -37,6 +37,35 @@
  *    Shame............All the CSS, hacks and things we are not proud of.
  */
 
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 481px,
+  md: 769px,
+  lg: 1025px,
+  xl: 1283px
+) !default;
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 738px,
+  md: 974px,
+  lg: 1283px,
+  xl: 1354px
+) !default;
+
+
+@import "bootstrap/scss/bootstrap";
+
 @import 'settings/**/*.scss';
 @import 'tools/**/*.scss';
 @import 'generic/**/*.scss';

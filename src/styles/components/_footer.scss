@@ -1,5 +1,381 @@
-/**
- * Footer
- */
+/*colors*/
+$primary : #fc0;
+$darkText: #232323;
+$lightText: #aeaeae;
+$greyBlock: #f8f8f8;
+$darkBlock: #282828;
+$greyBorder: #f1f1f1;
 
-.footer {}
+.footer {
+    background: $greyBlock;
+    margin-top: 100px;
+    @include media-breakpoint-down(md) {
+        margin-top: 80px;
+    }
+    @include media-breakpoint-down(sm) {
+        margin-top: 60px;
+    }
+    .footer-inner {
+        max-width: 1364px;
+        margin: 0 auto;
+        padding: 80px 40px 50px;
+        display: flex;
+        justify-content: space-between;
+        @include media-breakpoint-down(md) {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        @media all and (max-width: 768px){
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        @media all and (max-width: 480px){
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        @include media-breakpoint-down(xs) {
+            justify-content: center;
+        }
+    }
+    
+    &__left {
+        flex-grow: 1;
+        display: flex;
+        max-width: 472px;
+        justify-content: space-between;
+        @include media-breakpoint-down(lg) {
+            max-width: 377px;
+        }
+        &-menu-1,
+        &-menu-2 {
+            .menu-item {
+                display: block;
+                margin-bottom: 14px;
+                .menu-link {
+                    color: $darkText;
+                    text-decoration: none;
+                    display: inline-block;
+                    padding-bottom: 4px;
+                    position: relative;
+                    transition: ease .4s;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: 6px;
+                        height: 1px;
+                        background: $darkText;
+                        opacity: 0.2;
+                        transition: ease .4s;
+                    }
+                    &:hover {
+                     &:before {
+                         right: 101%;
+                     }   
+                    }
+                }
+            }
+        }
+    }
+
+    &__right {
+        flex-grow: 1;
+        max-width: 627px;
+        @media all and (max-width: 1140px){
+            max-width: 580px;
+        }
+        @media (min-width: 1025px) and (max-width: 1070px){
+            flex-grow: 0;
+            .phone-wr {
+                margin-right: 20px;
+            }
+        }
+        @include media-breakpoint-down(md) {
+            max-width: 457px;
+        }
+        @media all and (max-width: 960px){
+            max-width: 310px;
+        }
+        @include media-breakpoint-down(sm){
+            max-width: 216px;
+        }
+        &-title {
+            font-size: 34px;
+            font-weight: 500;
+            color: $darkText;
+            line-height: 40px;
+            padding-bottom: 30px;
+            @media all and (max-width: 960px){
+                font-size: 30px;
+                line-height: 1.2;
+            }
+            @include media-breakpoint-down(xs) {
+                font-size: 24px;
+                text-align: center;
+            }
+        }
+        &-contacts {
+            @include media-breakpoint-down(sm) {
+                max-width: 216px;
+            }
+            &-top {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-bottom: 30px;
+                
+                @include media-breakpoint-down(md) {
+                    padding-bottom: 20px;
+                }
+                @media all and (max-width: 960px){
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+            }
+            
+            &-bottom {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                @include media-breakpoint-down(md) {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+            }
+            
+            .phone-wr {
+                padding-left: 42px;
+                background: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.09845 2.9972C2.03547 12.4483 9.55169 19.9645 19.0028 20.9015C20.102 21.0105 21 20.1046 21 19V15.4415C21 14.5807 20.4491 13.8164 19.6324 13.5442L16.1726 12.3909C15.4539 12.1513 14.6616 12.3384 14.1259 12.874L13.5721 13.4278C13.2385 13.7615 12.7155 13.8183 12.326 13.5519C10.5313 12.3242 9.52457 11.3196 8.42738 9.66767C8.17058 9.28102 8.23196 8.76801 8.56017 8.4398L9.12594 7.87403C9.6616 7.33837 9.84865 6.54603 9.60909 5.82736L8.45582 2.36754C8.18359 1.55086 7.41932 1 6.55845 1H2.99997C1.8954 1 0.989468 1.89802 1.09845 2.9972Z' stroke='%23FFCC00' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A") left center no-repeat;
+                @media all and (max-width: 960px){
+                    margin-bottom: 27px;
+                }
+                .phone-title {
+                    font-size: 13px;
+                    color: $lightText;
+                    line-height: 15px;
+                    padding-bottom: 5px;
+                }
+                @include media-breakpoint-down(md) {
+                    padding-left: 40px;
+                    max-width: 220px;
+                    width: 100%;
+                    margin-right: 30px;
+                }
+                .phone-numbers {
+                    a {
+                        display: block;
+                        font-size: 22px;
+                        color: $darkText;
+                        line-height: 26px;
+                        text-decoration: none;
+                        @include media-breakpoint-down(lg) {
+                            font-size: 21px;
+                        }
+                    }
+                }
+            }
+
+            .foot-adress {
+                max-width: 266px;
+                padding-left: 40px;
+                font-size: 15px;
+                color: $darkText;
+                background: url("data:image/svg+xml,%3Csvg width='18' height='24' viewBox='0 0 18 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17 9C17 15.2325 11.4755 20.7744 9.60825 22.4696C9.25775 22.7878 8.74225 22.7878 8.39175 22.4696C6.52446 20.7744 1 15.2325 1 9C1 4.58172 4.58172 1 9 1C13.4183 1 17 4.58172 17 9Z' stroke='%23FFCC00' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M12 9C12 10.6569 10.6569 12 9 12C7.34315 12 6 10.6569 6 9C6 7.34315 7.34315 6 9 6C10.6569 6 12 7.34315 12 9Z' stroke='%23FFCC00' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A") left center no-repeat;
+            }
+            
+            .footer-button-wrapper {
+                @include media-breakpoint-down(md) {
+                    order: 2;
+                }
+                .footer-buton {
+                    display: inline-block;
+                    border: 0;
+                    font-size: 15px;
+                    color: $darkText;
+                    padding: 18px 23px 17px 51px;
+                    border-radius: 5px;
+                    background: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.4139 1.58603L14.121 2.29314L14.121 2.29314L13.4139 1.58603ZM1.58609 13.4139L0.878986 12.7067H0.878985L1.58609 13.4139ZM1.58609 16.2423L2.2932 15.5352L2.2932 15.5352L1.58609 16.2423ZM5.75767 20.4139L5.05056 21.121H5.05056L5.75767 20.4139ZM20.4139 5.7576L21.121 5.0505V5.0505L20.4139 5.7576ZM16.2423 1.58603L15.5352 2.29314L15.5352 2.29314L16.2423 1.58603ZM8.58609 20.4139L9.2932 21.121H9.2932L8.58609 20.4139ZM9.70711 15.2928C9.31658 14.9023 8.68342 14.9023 8.2929 15.2928C7.90237 15.6834 7.90237 16.3165 8.2929 16.707L9.70711 15.2928ZM20.4139 8.58603L21.121 9.29314L20.4139 8.58603ZM16.7071 8.29284C16.3166 7.90231 15.6834 7.90231 15.2929 8.29284C14.9024 8.68336 14.9024 9.31653 15.2929 9.70705L16.7071 8.29284ZM13.7071 12.2928C13.3166 11.9023 12.6834 11.9023 12.2929 12.2928C11.9024 12.6834 11.9024 13.3165 12.2929 13.707L13.7071 12.2928ZM12.7068 0.878925L0.878986 12.7067L2.2932 14.121L14.121 2.29314L12.7068 0.878925ZM0.878984 16.9494L5.05056 21.121L6.46477 19.7067L2.2932 15.5352L0.878984 16.9494ZM21.121 5.0505L16.9494 0.878923L15.5352 2.29314L19.7068 6.46471L21.121 5.0505ZM9.2932 21.121L11.7071 18.7071L10.2929 17.2928L7.87898 19.7067L9.2932 21.121ZM11.7071 17.2928L9.70711 15.2928L8.2929 16.707L10.2929 18.7071L11.7071 17.2928ZM18.7071 11.707L21.121 9.29314L19.7068 7.87892L17.2929 10.2928L18.7071 11.707ZM18.7071 10.2928L16.7071 8.29284L15.2929 9.70705L17.2929 11.707L18.7071 10.2928ZM11.7071 18.7071L15.2071 15.207L13.7929 13.7928L10.2929 17.2928L11.7071 18.7071ZM15.2071 15.207L18.7071 11.707L17.2929 10.2928L13.7929 13.7928L15.2071 15.207ZM15.2071 13.7928L13.7071 12.2928L12.2929 13.707L13.7929 15.207L15.2071 13.7928ZM19.7068 6.46471C20.0973 6.85524 20.0973 7.4884 19.7068 7.87892L21.121 9.29314C22.2926 8.12156 22.2926 6.22207 21.121 5.0505L19.7068 6.46471ZM5.05056 21.121C6.22213 22.2925 8.12163 22.2925 9.2932 21.121L7.87898 19.7067C7.48846 20.0973 6.8553 20.0973 6.46477 19.7067L5.05056 21.121ZM0.878985 12.7067C-0.292586 13.8783 -0.29259 15.7778 0.878984 16.9494L2.2932 15.5352C1.90267 15.1447 1.90267 14.5115 2.2932 14.121L0.878985 12.7067ZM14.121 2.29314C14.5115 1.90261 15.1447 1.90261 15.5352 2.29314L16.9494 0.878923C15.7779 -0.292651 13.8784 -0.292647 12.7068 0.878925L14.121 2.29314Z' fill='%23282828'/%3E%3C/svg%3E%0A") left 14px center no-repeat $primary;
+                    transition: ease 0.4s;
+                    @include media-breakpoint-down(sm) {
+                        padding: 18px 23px 17px 45px;
+
+                    }
+                    &:hover {
+                        color: #fff;
+                        background: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.4139 1.58603L14.121 2.29314L14.121 2.29314L13.4139 1.58603ZM1.58609 13.4139L0.878986 12.7067H0.878985L1.58609 13.4139ZM1.58609 16.2423L2.2932 15.5352L2.2932 15.5352L1.58609 16.2423ZM5.75767 20.4139L5.05056 21.121H5.05056L5.75767 20.4139ZM20.4139 5.7576L21.121 5.0505V5.0505L20.4139 5.7576ZM16.2423 1.58603L15.5352 2.29314L15.5352 2.29314L16.2423 1.58603ZM8.58609 20.4139L9.2932 21.121H9.2932L8.58609 20.4139ZM9.70711 15.2928C9.31658 14.9023 8.68342 14.9023 8.2929 15.2928C7.90237 15.6834 7.90237 16.3165 8.2929 16.707L9.70711 15.2928ZM20.4139 8.58603L21.121 9.29314L20.4139 8.58603ZM16.7071 8.29284C16.3166 7.90231 15.6834 7.90231 15.2929 8.29284C14.9024 8.68336 14.9024 9.31653 15.2929 9.70705L16.7071 8.29284ZM13.7071 12.2928C13.3166 11.9023 12.6834 11.9023 12.2929 12.2928C11.9024 12.6834 11.9024 13.3165 12.2929 13.707L13.7071 12.2928ZM12.7068 0.878925L0.878986 12.7067L2.2932 14.121L14.121 2.29314L12.7068 0.878925ZM0.878984 16.9494L5.05056 21.121L6.46477 19.7067L2.2932 15.5352L0.878984 16.9494ZM21.121 5.0505L16.9494 0.878923L15.5352 2.29314L19.7068 6.46471L21.121 5.0505ZM9.2932 21.121L11.7071 18.7071L10.2929 17.2928L7.87898 19.7067L9.2932 21.121ZM11.7071 17.2928L9.70711 15.2928L8.2929 16.707L10.2929 18.7071L11.7071 17.2928ZM18.7071 11.707L21.121 9.29314L19.7068 7.87892L17.2929 10.2928L18.7071 11.707ZM18.7071 10.2928L16.7071 8.29284L15.2929 9.70705L17.2929 11.707L18.7071 10.2928ZM11.7071 18.7071L15.2071 15.207L13.7929 13.7928L10.2929 17.2928L11.7071 18.7071ZM15.2071 15.207L18.7071 11.707L17.2929 10.2928L13.7929 13.7928L15.2071 15.207ZM15.2071 13.7928L13.7071 12.2928L12.2929 13.707L13.7929 15.207L15.2071 13.7928ZM19.7068 6.46471C20.0973 6.85524 20.0973 7.4884 19.7068 7.87892L21.121 9.29314C22.2926 8.12156 22.2926 6.22207 21.121 5.0505L19.7068 6.46471ZM5.05056 21.121C6.22213 22.2925 8.12163 22.2925 9.2932 21.121L7.87898 19.7067C7.48846 20.0973 6.8553 20.0973 6.46477 19.7067L5.05056 21.121ZM0.878985 12.7067C-0.292586 13.8783 -0.29259 15.7778 0.878984 16.9494L2.2932 15.5352C1.90267 15.1447 1.90267 14.5115 2.2932 14.121L0.878985 12.7067ZM14.121 2.29314C14.5115 1.90261 15.1447 1.90261 15.5352 2.29314L16.9494 0.878923C15.7779 -0.292651 13.8784 -0.292647 12.7068 0.878925L14.121 2.29314Z' fill='%23ffffff'/%3E%3C/svg%3E%0A") left 14px center no-repeat $darkBlock;
+                    }
+                }
+            }
+
+            .footer-socials {
+                padding-top: 8px;
+                @include media-breakpoint-down(md) {
+                    order: 1;
+                    margin-bottom: 30px;
+                    padding-top: 0;
+                }
+                @include media-breakpoint-down(sm) {
+                    margin-bottom: 20px;
+                }
+                .soc-inner {
+                    display: flex;
+                    @include media-breakpoint-down(sm) {
+                        flex-wrap: wrap;
+                    }
+                    .soc-item {
+                        text-decoration: none;
+                        font-size: 0;
+                        width: 44px;
+                        height: 44px;
+                        border-radius: 5px;
+                        background: #fff;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-right: 10px;
+                        @include media-breakpoint-down(sm) {
+                            width: 34px;
+                            height: 34px;
+                            margin-bottom: 10px;
+                        }
+                        &:last-child() {
+                            margin-right: 5px;
+                            @include media-breakpoint-down(sm) {
+                                margin-right: 0;
+                            }
+                        }
+                        svg {
+                            @include media-breakpoint-down(sm) {
+                                max-width: 19px;
+                            }
+                            path {
+                                fill: $darkBlock;
+                                transition: ease .3s;
+                            }
+                        }
+                        &:hover {
+                            svg path {
+                                fill: #1DA1F2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer-inner {
+        .footer__left {
+            @media all and (max-width: 660px){
+                display: none;
+            }
+            @include media-breakpoint-down(xs) {
+                display: none;
+            }
+        }
+    }
+    &__bottom {
+        background: #f2f2f2;
+        &-inner {
+            max-width: 1314px;
+            margin: 0 auto;
+            display: flex;
+            padding: 35px 15px;
+            align-items: center;
+            justify-content: space-between;
+            @include media-breakpoint-down(md) {
+                max-width: 974px;
+                padding: 20px 15px;
+            }
+
+            @include media-breakpoint-down(sm) {
+                flex-direction: column;
+                padding: 0 0 27px;
+            }
+
+
+            .copyright {
+                font-size: 15px;
+                line-height: 18px;
+                color: $darkText;
+                @include media-breakpoint-down(sm) {
+                    order: 2;
+                    padding-top: 27px;
+                    text-align: center;
+                }
+
+            }
+            .payment_systems {
+                display: flex;
+                align-items: center;
+                @include media-breakpoint-down(md) {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+                @include media-breakpoint-down(sm) {
+                    order: 1;
+                    background: $greyBlock;
+                    width: 100%;
+                    padding-right: 30px;
+                    padding-left: 30px;
+                    padding-bottom: 40px;
+                }
+                
+                @include media-breakpoint-down(xs) {
+                    padding-bottom: 30px;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
+                .payments-title {
+                    font-size: 17px;
+                    color: $darkText;
+                    @include media-breakpoint-down(md) {
+                        font-size: 15px;
+                        padding-bottom: 8px;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        max-width: 708px;
+                        width: 100%;
+                        margin: 0 auto;
+                    }
+                    @include media-breakpoint-down(xs) {
+                        max-width: 546px;
+                        text-align: center;
+                        padding-bottom: 15px;
+                    }
+
+                }
+                .payments-icons {
+                    display: flex;
+                    align-items: center;
+                    padding-left: 15px;
+                    @include media-breakpoint-down(md) {
+                        padding-left: 0;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        max-width: 708px;
+                        width: 100%;
+                        margin: 0 auto;
+                    }
+                    @include media-breakpoint-down(xs) {
+                        max-width: 546px;
+                        justify-content: center;
+                    }
+                    .payment-item {
+                        width: auto;
+                        margin: 0 13px;
+                        @include media-breakpoint-down(xs) {
+                            margin: 0 8px;
+                        }
+                        &:first-child {
+                            margin-left: 0;
+                        }
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
