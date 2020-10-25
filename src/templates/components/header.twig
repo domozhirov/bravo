@@ -6,7 +6,7 @@
           <div class="burger-btn"></div>
           <div class="header__company-text">
             <a href="#" class="logo">
-              <img src="..\assets\img\logo.svg" alt="Bravo Doors">
+              <img src="{{ base_path ~ directory }}assets/img/logo.svg" alt="Bravo Doors">
             </a>
             <div class="description">
               Интернет-магазин дверей Браво
@@ -17,10 +17,10 @@
           
           <div class="header__content-adress">
             <div class="dropdown header__content-dropdown">
-              <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="dropdown-toggle" type="button" id="dropdownAdress" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="city_text">Москва</span>
               </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div class="dropdown-menu" aria-labelledby="dropdownAdress">
                 <a class="dropdown-item" href="#">Санкт-Питербург</a>
                 <a class="dropdown-item" href="#">Новосибирск</a>
               </div>
@@ -38,7 +38,7 @@
                 <a href="tel:84951543831">8 (495) 154-38-31</a>
               </div>
               
-              <div class="callback-button" data-toggle="modal" data-target="#exampleModalCenter">
+              <div class="callback-button" data-toggle="modal" data-target="#ModalCenter">
                 Вызвать замерщика
               </div>
             </div>
@@ -85,9 +85,17 @@
                   <a href="#">Установка дверей</a>
                 </li>
               </ul>
-              <button class="search_button"></button>
+              <div class="site_search_wrapper">
+                <div class="search-form">
+                  <form action="">
+                    <input type="text" name="search" placeholder="Поиск по сайту" class="search-field">
+                    <button class="search_button" type="submit"></button>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
         </nav>
       </div>
     </header>
+  

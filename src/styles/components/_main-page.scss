@@ -1,13 +1,3 @@
-/*colors*/
-$primary : #ffcc00;
-$t_primary : rgba(255, 204, 0, 0.1);
-$darkText: #232323;
-$lightText: #aeaeae;
-$greyBlock: #f8f8f8;
-$darkBlock: #282828;
-$greyBorder: #f1f1f1;
-
-
 .site-main {
     padding-top: 50px;
     @include media-breakpoint-down(sm){
@@ -72,18 +62,9 @@ $greyBorder: #f1f1f1;
 
 .main-folders {
     .folders-title {
-        font-size: 34px;
-        line-height: 40px;
-        font-weight: 500;
-        color: $darkText;
         text-align: center;
         padding-bottom: 30px;
-        @include media-breakpoint-down(sm) {
-            font-size: 30px;
-            line-height: 1.2;
-        }
         @include media-breakpoint-down(xs) {
-            font-size: 24px;
             padding-bottom: 20px;
         }
     }
@@ -270,14 +251,11 @@ $greyBorder: #f1f1f1;
             margin-bottom: 30px;
         }
         .features-image {
-            margin-bottom: 20px;
-            @include media-breakpoint-down(lg) {
-                margin-bottom: 18px;
-                min-height: 56px;
-                display: flex;
-                justify-content: center;
-                align-content: center;
-            }
+            margin-bottom: 18px;
+            min-height: 56px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
             img {
                 max-width: 100%;
                 width: auto;
@@ -343,16 +321,11 @@ $greyBorder: #f1f1f1;
             margin-bottom: 40px;
         }
         h1 {
-            font-size: 34px;
-            line-height: 40px;
             margin-bottom: 40px;
             @include media-breakpoint-down(sm) {
-                font-size: 30px;
-                line-height: 1.2;
                 margin-bottom: 30px;
             }
             @include media-breakpoint-down(xs) {
-                font-size: 24px;
                 text-align: center;
                 margin-bottom: 20px;
             }
@@ -383,10 +356,7 @@ $greyBorder: #f1f1f1;
             padding: 30px 20px;
         }
         .news-title {
-            font-size: 34px;
-            line-height: 40px;
             padding-bottom: 30px;
-            font-weight: 500;
         }
         .news-list {
             @include media-breakpoint-down(md) {
@@ -429,8 +399,13 @@ $greyBorder: #f1f1f1;
                 .news-anonce {
                     text-decoration: underline;
                     text-decoration-color: rgba(35, 35, 35, .2);
+                    color: $darkText;
+                    display: inline-block;
                     @include media-breakpoint-down(sm) {
                         font-size: 14px;
+                    }
+                    &:hover {
+                        text-decoration: none;
                     }
                 }
             }

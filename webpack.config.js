@@ -68,7 +68,12 @@ const webpackConfig = {
     }),
     new WebpackNotifierPlugin({
       skipFirstNotification: true
-    })
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
+    }),
   ],
 
   resolve: {

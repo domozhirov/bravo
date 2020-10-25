@@ -1,9 +1,12 @@
 /**
  * Buttons
  */
+$color-primary: #ffcc00;
 
 $btn-color-bg: $color-primary !default;
-$btn-color-bg-hover: darken($color-primary, 10%) !default;
+$btn-color-bg-hover: #282828 !default;
+
+//$btn-color-bg-hover: darken($color-primary, 10%) !default;
 
 $btn-color-text: white !default;
 $btn-color-text-hover: white !default;
